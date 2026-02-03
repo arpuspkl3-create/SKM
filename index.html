@@ -68,15 +68,99 @@
         table { width: 100%; border-collapse: collapse; min-width: 1200px; background: white; }
         th { background: var(--biru); color: white; padding: 15px; font-size: 13px; }
         td { padding: 12px; border-bottom: 1px solid #eee; text-align: center; font-size: 13px; }
-        /* Aturan khusus untuk layar HP */
+        /* ===============================
+   RESPONSIVE FINAL (HP)
+   =============================== */
 @media (max-width: 768px) {
-    .container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 10px !important;
-        border-radius: 0 !important;
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
     }
+
+    .header img {
+        width: 42px;
+        margin-bottom: 5px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .header h2 {
+        font-size: 13px;
+    }
+
+    .step {
+        padding: 20px;
+    }
+
+    .welcome-split {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .welcome-img img {
+        width: 85%;
+        max-width: 260px;
+    }
+
+    .welcome-text h2 {
+        font-size: 28px !important;
+    }
+
+    .welcome-text p {
+        font-size: 15px !important;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .emoji-grid {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .emoji-item {
+        flex: 0 0 48%;
+        padding: 18px;
+    }
+
+    .emoji-item span {
+        font-size: 36px;
+    }
+
+    .extra-logos {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .extra-logos img {
+        height: 60px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+}
+
+    
      /* Agar Kecamatan & Jenis Layanan jadi atas-bawah di HP */
     .form-grid {
         grid-template-columns: 1fr !important; 
@@ -87,14 +171,14 @@
     .emoji-item span {
         font-size: 2rem !important;
     }
-}
+
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="header">
-        <img src="dinas.png" alt="Logo"> <div class="title-area">
+        <img src="dinas.PNG" alt="Logo"> <div class="title-area">
             <h1>DINAS ARPUS</h1>
             <h2>Kabupaten Pekalongan</h2>
         </div>
@@ -120,7 +204,7 @@
     </div>
 
     <div id="p2" class="step">
-        <h2 style="text-align: center; margin-bottom: 30px;">BIOATA RESPONDEN</h2>
+        <h2 style="text-align: center; margin-bottom: 30px;">BIODATA RESPONDEN</h2>
         <div class="form-grid">
             <div class="form-group"><label>Nama Lengkap</label><input type="text" id="nama"></div>
             <div class="form-group"><label>Jenis Kelamin</label><select id="jk"><option value="">-- Pilih --</option><option value="L">Laki-laki</option><option value="P">Perempuan</option></select></div>
@@ -156,7 +240,7 @@
         <h2 style="text-align:center;">Survei Kepuasan Masyarakat Tahun <span id="thnKues"></span></h2>
         
         <div id="stepQ1" class="q-box q-active">
-            <h3>1.Bagaimana pendapat saudara tentang ksesuaian persyaratan pelayanan dengan jenis pelayannnya?</h3>
+            <h3>1.Bagaimana pendapat saudara tentang kesesuaian persyaratan pelayanan dengan jenis pelayanannya?</h3>
             <div class="emoji-grid" id="q1">
                 <div class="emoji-item" onclick="pilih(this, 'q1', 100)"><span>😍</span><b>Sangat Sesuai</b></div>
                 <div class="emoji-item" onclick="pilih(this, 'q1', 75)"><span>😊</span><b>Sesuai</b></div>
@@ -189,7 +273,7 @@
         </div>
 
         <div id="stepQ4" class="q-box">
-            <h3>4.Bagaimana pendapat saudara tentang kewajaran biyaya atau tarif dalam pelayanan</h3>
+            <h3>4.Bagaimana pendapat saudara tentang kewajaran biaya atau tarif dalam pelayanan</h3>
             <div class="emoji-grid" id="q4">
                 <div class="emoji-item" onclick="pilih(this, 'q4', 100)"><span>😍</span><b>Gratis</b></div>
                 <div class="emoji-item" onclick="pilih(this, 'q4', 75)"><span>😊</span><b>Murah</b></div>
@@ -200,7 +284,7 @@
         </div>
 
             <div id="stepQ5" class="q-box">
-            <h3>5.bagaimana pendapat saudara tentang kesesuaian produk pelayanan antara yang tercantum dalam standar pelayanan denagn hasil yang di berikan</h3>
+            <h3>5.bagaimana pendapat saudara tentang kesesuaian produk pelayanan antara yang tercantum dalam standar pelayanan dengan hasil yang di berikan</h3>
             <div class="emoji-grid" id="q5">
                 <div class="emoji-item" onclick="pilih(this, 'q5', 100)"><span>😍</span><b>Sangat Sesuai</b></div>
                 <div class="emoji-item" onclick="pilih(this, 'q5', 75)"><span>😊</span><b>Sesuai</b></div>
@@ -431,6 +515,4 @@
     }
 </script>
 </body>
-
 </html>
-
